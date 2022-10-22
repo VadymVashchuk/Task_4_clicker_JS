@@ -9,12 +9,28 @@
   <title>V_Vashchuk_Task_4</title>
 </head>
 
-<body>
+<body class="body-lock">
   <div class="main-wrapper">
-    <div class="info-score">You score:</div>
-    <div id="score">0</div>
+    <div class="header">
+      <div class="info">You score:</div>
+      <div class="info">Time left:</div>
+    </div>
+    <div class="bottom-header">
+      <div id="score">0</div>
+      <button id="restart">Restart</button>
+      <div id="time">5</div>
+    </div>
     <div class="field">
       <div id="enemy"></div>
+    </div>
+  </div>
+  <div class="modal-window">
+    <div class="start-wrapper">
+      <div class="info-start">
+        <h1>PREPARE FOR BATTLE</h1>
+        <p>YOU HAVE ONLY 30 SECONDS TO COLLECT AS MANY COINS AS YOU CAN</p>
+      </div>
+      <button id="start">START</button>
     </div>
   </div>
 </body>
