@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(34, 34, 34);
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -7,13 +13,24 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   margin: 0;
-  padding-top: 100px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html {
+  height: 100%;
 }
 
 .main-wrapper {
-  width: 710px;
-  margin: 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -100px;
 }
 
 .header {
@@ -70,16 +87,6 @@ body {
   font-weight: 700;
 }
 
-.start-wrapper {
-  position: absolute;
-  top: 100px;
-  width: 80%;
-  left: 10%;
-  background-color: rgb(190, 38, 38);
-}
-
-#start {}
-
 /* РОБЛЮ МОДАЛЬНЕ ВІКНО */
 
 .modal-window {
@@ -88,22 +95,94 @@ body {
   left: 0px;
   right: 0px;
   bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start-wrapper {
-  background-color: rgb(243, 144, 144);
+  background: url(./img/start_bg_v3.png) 0 0/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 60%;
+  height: 65%;
+  padding: 50px 10px 10px 10px;
+  text-align: center;
+  position: relative;
 }
 
 .modal-window-closed {
   display: none;
 }
 
-.info-start {
+.game-title {
   font-size: 18px;
   text-align: center;
   font-weight: 700;
+}
+
+.wanna-make-money {
+  font-size: 28px;
+}
+
+.terms {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.color-gold {
+  color: gold;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+#start {
+  width: 125px;
+  height: 45px;
+  border-radius: 8%;
+  border: 0;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: rgb(22, 134, 238);
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 3px rgba(68, 68, 68, 0.24);
+}
+
+#start:hover {
+  background-color: rgb(43, 43, 43);
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition-duration: 0.15s;
+  cursor: pointer;
+}
+
+.capitalist-img1 {
+  position: absolute;
+  background: url(./img/man_start.png) 0 0/cover no-repeat;
+  width: 175px;
+  height: 175px;
+  top: 40px;
+  left: 40px;
+}
+.capitalist-img2 {
+  position: absolute;
+  background: url(./img/man_time.png) 0 0/cover no-repeat;
+  width: 160px;
+  height: 160px;
+  bottom: 40px;
+  right: 40px;
+}
+
+.little-issue {
+  align-self: flex-start;
+  font-size: 12px;
+  color: rgb(80, 80, 80);
 }
