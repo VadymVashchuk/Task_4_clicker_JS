@@ -17,11 +17,19 @@ playAgain.addEventListener("click", function () {
 });
 gameRestart.addEventListener("click", gameOverReset);
 
+// function hit() {
+//   enemy.style.top = Math.random() * 350 + "px";
+//   enemy.style.left = Math.random() * 650 + "px";
+//   ++scoreValue;
+//   score.innerHTML = scoreValue;
+// }
+
 function hit() {
   enemy.style.top = Math.random() * 350 + "px";
   enemy.style.left = Math.random() * 650 + "px";
   ++scoreValue;
   score.innerHTML = scoreValue;
+  document.getElementById('coins-sound').play();
 }
 
 function gameStartWithStartButton() {
