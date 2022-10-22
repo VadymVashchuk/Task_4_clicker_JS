@@ -152,7 +152,6 @@ html {
   border: 0;
   font-size: 20px;
   font-weight: 700;
-  /* background-color: rgb(22, 134, 238); */
   background-color: rgb(30, 139, 202);
   color: aliceblue;
   display: flex;
@@ -180,6 +179,7 @@ html {
   top: 40px;
   left: 40px;
 }
+
 .capitalist-img2 {
   position: absolute;
   background: url(./img/man_time.png) 0 0/cover no-repeat;
@@ -193,4 +193,84 @@ html {
   align-self: flex-start;
   font-size: 12px;
   color: rgb(80, 80, 80);
+}
+
+/* GAME OVER ВІКНО */
+
+.game-over-window {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: none; 
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-wrapper {
+  background: url(./img/start_bg_v3.png) 0 0/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  height: 35%;
+  padding: 30px 10px 30px 10px;
+  text-align: center;
+  position: relative;
+}
+
+.congrats {
+  font-size: 28px;
+}
+
+.players-end-score-wrapper {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#players-end-score {
+  margin: 10px 0px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+#play-again {
+  width: 150px;
+  height: 45px;
+  border-radius: 8%;
+  border: 0;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: rgb(30, 139, 202);
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 3px rgba(68, 68, 68, 0.24);
+}
+
+#play-again:hover {
+  background-color: rgb(43, 43, 43);
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition-duration: 0.15s;
+  cursor: pointer;
+}
+
+.capitalist-img3 {
+  position: absolute;
+  background: url(./img/man_game_over_v3.png) 0 0/cover no-repeat;
+  width: 175px;
+  height: 175px;
+  top: 120px;
+  left: 40px;
 }

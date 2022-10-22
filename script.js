@@ -5,6 +5,8 @@ scoreValue = score.innerHTML;
 const time = document.getElementById('time');
 timeValue = time.innerHTML;
 const modalWindow = document.querySelector('.modal-window');
+const gameOverWindow = document.querySelector('.game-over-window');
+const finishScore = document.getElementById('players-end-score');
 
 function hit() {
   enemy.style.top = Math.random() * 350 + "px";
@@ -26,10 +28,11 @@ start.addEventListener("click", function () {
   setTimeout(closeWindow, 2000);            // закриваємо модальне вікно окремо, а не в сетІнтервал, це важливо
 });
 
-function gameOver() {                     // ЦЯ ШТУКА ТІЛЬКИ ДЛЯ ТОГО, ЩОБ НА ТАЙМЕРІ ПОЯВИВСЯ 0, А НЕ ЗУПИНЯЛОСЬ НА 1
-  alert('GAME OVER');
-}
-
 function closeWindow() {                     
   modalWindow.classList.add('modal-window-closed');          //ЦЕ ДЛЯ ЗАКРИВАННЯ МОДАЛЬНОГО ВІКНА ФУНКЦІЯ
+}
+
+function gameOver() {
+  gameOverWindow.classList.add('active');
+  finishScore.innerHTML = scoreValue;
 }
