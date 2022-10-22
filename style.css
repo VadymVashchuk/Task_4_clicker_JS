@@ -68,7 +68,7 @@ html {
   cursor: pointer;
 }
 
-#score, #time, #restart {
+#score, #time {
   width: 100px;
   height: 50px;
   font-size: 25px;
@@ -78,6 +78,7 @@ html {
   align-items: center;
   justify-content: center;
   margin: 8px 0px;
+  border-radius: 8%;
 }
 
 #restart {
@@ -163,9 +164,6 @@ html {
 #start:hover {
   background-color: rgb(43, 43, 43);
   color: gold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 22px;
   transition-duration: 0.15s;
   cursor: pointer;
@@ -203,7 +201,7 @@ html {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  display: none; 
+  display: none;
 }
 
 .active {
@@ -258,9 +256,6 @@ html {
 #play-again:hover {
   background-color: rgb(43, 43, 43);
   color: gold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 22px;
   transition-duration: 0.15s;
   cursor: pointer;
@@ -273,4 +268,26 @@ html {
   height: 175px;
   top: 120px;
   left: 40px;
+}
+
+#restart {
+  width: 100px;
+  height: 50px;
+  border-radius: 8%;
+  border: 0;
+  font-size: 22px;
+  font-weight: 700;
+  background-color: rgba(150, 222, 255, 0.877);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0px;
+}
+
+#restart:hover {
+  background-color: rgb(43, 43, 43);
+  color: gold;
+  font-size: 22px;
+  transition-duration: 0.15s;
+  cursor: pointer;
 }

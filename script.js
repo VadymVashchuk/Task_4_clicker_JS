@@ -7,6 +7,15 @@ timeValue = time.innerHTML;
 const modalWindow = document.querySelector('.modal-window');
 const gameOverWindow = document.querySelector('.game-over-window');
 const finishScore = document.getElementById('players-end-score');
+const playAgain = document.getElementById('play-again');
+const gameRestart = document.getElementById('restart');
+
+enemy.addEventListener("click", hit);
+start.addEventListener("click", gameStartWithStartButton);
+playAgain.addEventListener("click", function () {
+  setTimeout(gameStartWithPlayAgainButton, 800);
+});
+gameRestart.addEventListener("click", gameOverReset);
 
 function hit() {
   enemy.style.top = Math.random() * 350 + "px";
@@ -15,24 +24,45 @@ function hit() {
   score.innerHTML = scoreValue;
 }
 
-enemy.addEventListener("click", hit);
-start.addEventListener("click", function () {
-  let timerVar = setInterval(function () {           //ЯК ЦЕ ТАК, ЩО В ЗНАЧЕНИИ ПЕРЕМЕННОЇ ОГОЛОШУЄТЬСЯ ФУНКЦІЯ???
+function gameStartWithStartButton() {
+  setTimeout(gameStart, 800);
+  setTimeout(closeWindow, 800);
+}
+
+function gameStart() {
+  let timerVar = setInterval(function () {           //ЦІКАВО, ЩО В ЗНАЧЕНИИ ПЕРЕМЕННОЇ МОЖНА ОГОЛОСИТИ ФУНКЦІЮ
     --timeValue;
     time.innerHTML = timeValue;
-    if (timeValue === 0) {
+    if (timeValue < 1) {
       clearInterval(timerVar);              // ЗУПИНЯЄ ТАЙМЕР
-      setTimeout(gameOver, 200);            // ЦЯ ШТУКА ТІЛЬКИ ДЛЯ ТОГО, ЩОБ НА ТАЙМЕРІ ПОЯВИВСЯ 0, А НЕ ЗУПИНЯЛОСЬ НА 1
+      setTimeout(gameOver, 200);            // ЦЯ ШТУКА ДЛЯ ТОГО, ЩОБ НА ТАЙМЕРІ ПОЯВИВСЯ 0, А НЕ ЗУПИНЯЛОСЬ НА 1
     }
   }, 1000);
-  setTimeout(closeWindow, 2000);            // закриваємо модальне вікно окремо, а не в сетІнтервал, це важливо
-});
+}
 
-function closeWindow() {                     
+function closeWindow() {
   modalWindow.classList.add('modal-window-closed');          //ЦЕ ДЛЯ ЗАКРИВАННЯ МОДАЛЬНОГО ВІКНА ФУНКЦІЯ
 }
 
 function gameOver() {
   gameOverWindow.classList.add('active');
   finishScore.innerHTML = scoreValue;
+}
+
+function gameStartWithPlayAgainButton() {
+  gameOverWindow.classList.remove('active');
+  reset();
+  gameStart();
+}
+
+function reset() {
+  scoreValue = 0;
+  timeValue = 10;
+  score.innerHTML = scoreValue;
+  time.innerHTML = timeValue;
+}
+
+function gameOverReset() {
+  gameOver();
+  timeValue = 1;
 }
