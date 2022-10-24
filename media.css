@@ -1,0 +1,61 @@
+
+@media (max-width: 999px) {
+  .capitalist-img1 {
+    width: 125px;
+    height: 125px;
+  }
+  .capitalist-img2 {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media (max-width: 720px) {
+  #field {
+    width: 600px;
+  }
+  #enemy {
+    left: 275px;
+  }
+}
+
+/* HEIGHT */
+
+@media (max-height: 650px) {
+  .main-wrapper {
+    margin-top: 0px;
+  }
+  .game-over-window {
+    background-color: white;
+  }
+}
+
+@media (max-height: 530px) {
+  .capitalist-img1 {
+    width: 80px;
+    height: 80px;
+  }
+  .capitalist-img2 {
+    width: 80px;
+    height: 80px;
+  }
+  #field {
+    height: 300px;
+  }
+  #enemy {
+    top: 75px;
+  }
+}
+
+@media (max-height: 410px) {
+  #field {
+    height: 250px;
+  }
+  #enemy {
+    top: 100px;
+  }
+  .end-wrapper {
+  width: 550px;
+  height: 300px;
+  }
+}

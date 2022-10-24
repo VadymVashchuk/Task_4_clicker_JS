@@ -9,6 +9,10 @@ const gameOverWindow = document.querySelector('.game-over-window');
 const finishScore = document.getElementById('players-end-score');
 const playAgain = document.getElementById('play-again');
 const gameRestart = document.getElementById('restart');
+const field = document.getElementById('field');
+const fieldStyle = getComputedStyle(field);
+const fieldWidth = parseInt(fieldStyle.width);
+const fieldHeight = parseInt(fieldStyle.height);
 
 enemy.addEventListener("click", hit);
 start.addEventListener("click", gameStartWithStartButton);
@@ -17,16 +21,9 @@ playAgain.addEventListener("click", function () {
 });
 gameRestart.addEventListener("click", gameOverReset);
 
-// function hit() {
-//   enemy.style.top = Math.random() * 350 + "px";
-//   enemy.style.left = Math.random() * 650 + "px";
-//   ++scoreValue;
-//   score.innerHTML = scoreValue;
-// }
-
 function hit() {
-  enemy.style.top = Math.random() * 350 + "px";
-  enemy.style.left = Math.random() * 650 + "px";
+  enemy.style.top = Math.random() * (fieldHeight - 50) + "px";
+  enemy.style.left = Math.random() * (fieldWidth - 50) + "px";
   ++scoreValue;
   score.innerHTML = scoreValue;
   document.getElementById('coins-sound').play();
